@@ -83,7 +83,7 @@ resource "null_resource" "remote-exec" {
       type ="ssh"
       agent = false
       user = "ubuntu"
-      private_key = "${file("/home/ubuntu/deploy-openstack/ssh-terra/blc-cloud.pem")}"
+      private_key = "${file("/root/onefile/blc-terraform-Hadoop/ssh-terra/blc-cloud.pem")}"
       host = "${openstack_networking_floatingip_v2.admin.address}"
     }
     inline = [
@@ -91,6 +91,7 @@ resource "null_resource" "remote-exec" {
       "sudo apt install docker-compose -y",
       "sudo apt install docker.io",
       "git clone https://github.com/rancavil/hadoop-single-node-cluster.git",
+      "sudo apt update -y",
       "cd hadoop-single-node-cluster",
       "sudo docker build -t hadoop .",
       "sudo docker run -it --name terra-mert -p 9864:9864 -p 9870:9870 -p 8088:8088 --hostname localhost hadoop",

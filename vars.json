@@ -1,9 +1,0 @@
-{
-    "name": "hadoop",
-    "user_name": "mertcan",
-    "tenant_name": "admin",
-    "password": "1",
-    "image_id": "20944105-1877-4935-bacd-d68dc3691ade",
-    "flavor_id": "4f48c778-086a-4426-befe-70342534e334",
-    "key_pair": "blc_cloud"
-}

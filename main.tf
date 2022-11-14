@@ -87,9 +87,10 @@ resource "null_resource" "remote-exec" {
       host = "${openstack_networking_floatingip_v2.admin.address}"
     }
     inline = [
-      "sudo apt update -y",
+      "sudo apt-get update -y",
+      "sudo apt install docker.io -y",
+      "sudo apt-get update -y",
       "sudo apt install docker-compose -y",
-      "sudo apt install docker.io",
       "git clone https://github.com/rancavil/hadoop-single-node-cluster.git",
       "sudo apt update -y",
       "cd hadoop-single-node-cluster",

@@ -83,7 +83,7 @@ resource "null_resource" "remote-exec" {
       type ="ssh"
       agent = false
       user = "ubuntu"
-      private_key = "${file("${path.module}/blc-cloud.pem")}"
+      private_key = "${file(local.local_data.pem)}"
       host = "${openstack_networking_floatingip_v2.admin.address}"
     }
     inline = [
